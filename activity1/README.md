@@ -17,15 +17,15 @@ The leader sends an arithmetic task to connected workers. Each user calculates a
 
 Use a full JDK, version 17 or 21. The included Gradle wrapper downloads Gradle 8.13 on its first run. Internet access is needed for that download. The project was checked with JDK 21 and uses only the Java standard library.
 
-Extract the zip. Open four PowerShell terminals in `Assignment5/activity1`. The Windows commands below use `gradlew.bat`. On Linux or macOS, use `./gradlew` in its place. First compile the code:
+Extract the zip. Open four Command Prompt (CMD) windows in `Assignment5/activity1`. The Windows commands below use `gradlew.bat`. On Linux or macOS, use `./gradlew` in its place. First compile the code:
 
-```powershell
+```cmd
 .\gradlew.bat classes
 ```
 
 In terminal 1, start the leader:
 
-```powershell
+```cmd
 .\gradlew.bat --console=plain runLeader --args="9000 30"
 ```
 
@@ -33,15 +33,15 @@ The arguments are the port and timeout in seconds. Both are optional; the defaul
 
 In terminals 2, 3, and 4, start one worker each:
 
-```powershell
+```cmd
 .\gradlew.bat --console=plain runWorker --args="Worker1 localhost 9000"
 ```
 
-```powershell
+```cmd
 .\gradlew.bat --console=plain runWorker --args="Worker2 localhost 9000"
 ```
 
-```powershell
+```cmd
 .\gradlew.bat --console=plain runWorker --args="Worker3 localhost 9000"
 ```
 
@@ -53,7 +53,7 @@ Workers use `roundId:answer` for manual input. For round 1, enter `1:42` to subm
 
 Run the leader on the reachable device. Replace `localhost` in each remote worker command with the leader's address:
 
-```powershell
+```cmd
 .\gradlew.bat --console=plain runWorker --args="Worker1 LEADER_IP 9000"
 ```
 
